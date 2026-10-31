@@ -145,3 +145,6 @@ C --> D
 =======
 Esta frase se debe quedar en el readme
 main
+
+## Despliegue AWS S3 + EC2
+Proyecto desplegado automáticamente mediante GitHub Actions.
