@@ -30,3 +30,10 @@ jobs:
         run: |
           rsync -avz --delete -e "ssh -i ~/.ssh/key.pem" \
             ./out/ ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/html/
+
+      - name: Subir recursos a S3
+        run: |
+          aws s3 sync ./out/_next/ s3://${{ secrets.S3_BUCKET }}/_next/ \
+          --delete \
+          --cache-control "public, max-age=31536000, immutable"
+
