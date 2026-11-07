@@ -1,9 +1,8 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   output: 'export',
   images: { unoptimized: true },
-  assetPrefix: 'https://bpds-nextjs-luis-2026.s3.us-east-1.amazonaws.com',
+  assetPrefix: process.env.ASSET_PREFIX || undefined,
 };
 
 export default nextConfig;
